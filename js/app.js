@@ -25,6 +25,13 @@ const mainSect = document.createElement("main");
 mainSect.setAttribute("class", "main");
 document.body.appendChild(mainSect);
 
+// Create welcome section
+const welcomeSect = document.createElement("section");
+welcomeSect.setAttribute("class", "welcome");
+welcomeSect.innerHTML = `<p>Landing Page</p>`;
+mainSect.appendChild(welcomeSect);
+
+
 // Create a button to add sections
 const addButton = document.createElement("button");
 addButton.textContent = "Add Section";
