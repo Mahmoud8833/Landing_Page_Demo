@@ -29,4 +29,7 @@ Just for testing if I can build web pages just by using DOM manipulation.
 
 Developed by. Mahmoud Abd Alaziz Ali
 
-An FWD student
+An FWD student.
+
+Notice:
+I used some help from (FWD community, Stackoverflow, Codepen) Sites
