@@ -7,6 +7,13 @@
 }
 
 /* start nav bar */
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 6rem;
+}
+
 .navBar {
     position: fixed;
     top: 0;
@@ -21,7 +28,7 @@
 }
 
 .navBar a {
-    display: block;
+    display: flex;
     color: rgb(114, 114, 114);
     height: 2rem;
     border-radius: 5px;
@@ -66,7 +73,7 @@
     font-size: 1.25em;
     margin: 0 3rem;
     border-radius: 4px;
-    background-color: #5ca1e1;
+    background-color: #63686d;
     border: none;
     color: #fff;
     text-align: center;
@@ -99,18 +106,38 @@
 /* start main */
 .main {
     position: relative;
-    
+    display: flex;
+    flex-direction: column;
     top: 6rem;
     width: 100%;
     height: calc(max-content - 6rem);
-    background-color: azure;
+    margin-bottom: 8rem;
 }
 
-section:nth-child(even){
-    
+.main section:nth-of-type(even) {
+    align-self: flex-end;
 }
 
-/* end amin */
+/* end main */
+
+/* start welcome section */
+
+.welcome {
+    width: 100%;
+    height: 50vh;
+    font-size: 8em;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgb(61, 61, 61), rgb(199, 199, 199));
+    color: rgb(214, 214, 214);
+}
+
+.welcome p {
+    padding-left: 3rem;
+    text-shadow: 4px 3px 0 #7A7A7A;
+}
+
+/* end welcome section */
 
 /* start section */
 .section {
@@ -119,7 +146,6 @@ section:nth-child(even){
     text-align: justify;
     width: 80%;
     padding: 2rem;
-    /* background-color: aqua; */
     margin: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
@@ -132,16 +158,38 @@ section:nth-child(even){
 
 .section h1 {
     margin-bottom: .5rem;
+    text-decoration: underline;
+
+}
+
+.section:nth-of-type(even) h1 {
+    text-align: right;
 }
 
 .activeH1 {
     color: gray;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .section p {
     font-size: 1.5em;
     text-indent: 1.5em;
+}
+
+footer {
+    width: 100%;
+    height: 10em;
+    display: flex;
+    position: relative;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgb(61, 61, 61), rgb(199, 199, 199));
+    color: rgb(214, 214, 214);
+    font-size: 2rem;
+}
+
+footer p {
+    padding-left: 3rem;
+    text-shadow: 4px 3px 0 #7A7A7A;
 }
 
 /* end section */
