@@ -2,9 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
 
+a {
+    color: gray;
 }
 
 body {
@@ -12,24 +14,24 @@ body {
 }
 
 /* start nav bar */
-
 header {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: 6rem;
+    height: fit-content;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(51, 49, 49);
 }
 
 .navBar {
-    position: fixed;
-    top: 0;
     display: flex;
     justify-content: end;
     align-items: center;
-    z-index: 22;
     width: 100%;
     height: 6em;
-    background-color: rgb(51, 49, 49);
-    padding: 0 2rem;
+    padding: 0 2em;
+    white-space: nowrap;
 }
 
 .navBar a {
@@ -110,13 +112,12 @@ header {
 
 /* start main */
 .main {
-    position: relative;
     display: flex;
     flex-direction: column;
-    top: 6rem;
+    top: 6em;
     width: 100%;
-    height: calc(max-content - 6rem);
-    margin-bottom: 7rem;
+    height: calc(max-content - 6em);
+    /* padding-top: 6em; */
 }
 
 .main section:nth-of-type(even) {
@@ -126,10 +127,9 @@ header {
 /* end main */
 
 /* start welcome section */
-
 .welcome {
     width: 100%;
-    height: 60vh;
+    height: calc(100vh - 12rem);
     font-size: 8em;
     display: flex;
     align-items: center;
@@ -146,12 +146,10 @@ header {
 
 /* start section */
 .section {
-    display: block;
-    position: relative;
     text-align: justify;
     width: 80%;
-    padding: 2rem;
-    margin: 1rem;
+    padding: 2em;
+    margin: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 0.3em;
@@ -164,7 +162,6 @@ header {
 .section h1 {
     margin-bottom: .5rem;
     text-decoration: underline;
-
 }
 
 .section:nth-of-type(even) h1 {
@@ -200,11 +197,14 @@ footer p {
     text-shadow: 4px 3px 0 #7A7A7A;
 }
 
+.responsive-list {
+    display: none;
+}
+
 /* end footer */
 
 /* start responsive  */
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 769px) {
     .navBar {
         flex-direction: column;
         align-items: flex-end;
@@ -223,6 +223,7 @@ footer p {
 
     .welcome {
         font-size: 3em;
+        margin-bottom: calc(45vh - 12rem);
     }
 
     .section p {
@@ -233,6 +234,48 @@ footer p {
         font-size: 1rem;
     }
 
+    /* start responsive menu */
+    .responsive-list {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(51, 49, 49);
+        align-items: baseline;
+        justify-content: baseline;
+        padding: 0;
+        width: 6em;
+        height: 6em;
+    }
+
+    .responsive-list i {
+        font-size: 3em;
+        color: #63686d;
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+        transform: translate(-50%, -50%);
+    }
+
+    .responsive-list li {
+        list-style-type: none;
+        padding: 0.5em;
+        width: max-content;
+    }
+
+    .responsive-list li a {
+        position: relative;
+        display: block;
+        top: 5rem;
+        font-size: 1em;
+        text-decoration: none;
+        background: rgb(51, 49, 49);
+        z-index: 1000;
+    }
+
+    .responsive-innerDiv {
+        display: none;
+    }
+
+    /* end responsive menu */
 }
 
 /* end responsive */
